@@ -13,7 +13,7 @@
 
 #### Forschungsfrage
 
-lorem ipsum
+Welchen Einfluss haben soziale Interaktionen auf das Aneignungsverhalten bezüglich Informations- & Kommunikations-Technologie (ICT)?
 
 #### Faktorenraum
 
