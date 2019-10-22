@@ -1,8 +1,8 @@
-# ICTamArbeitsplatzWS1920
+#### ICTamArbeitsplatzWS1920
 
-####Gruppe 1: ICT am Arbeitsplatz
+### Gruppe 1: ICT am Arbeitsplatz
 
-#####Gruppenmitglieder
+#### Gruppenmitglieder
 
 * Tanita Geiger
 * Andrea Wiel
@@ -11,8 +11,10 @@
 * Chanrainsey Roth
 * Marie Sommermann
 
-#####Forschungsfrage
+#### Forschungsfrage
 
 lorem ipsum
 
-#####Faktorenraum
+#### Faktorenraum
+
+insert screenshot here
