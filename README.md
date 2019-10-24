@@ -6,7 +6,7 @@
 
 * Tanita Geiger
 * Andrea Wiel
-* Julian Freudenhhammer
+* Julian Freudenhammer
 * Julian Massau
 * Chanrainsey Roth
 * Marie Sommermann
