@@ -17,4 +17,4 @@ Welchen Einfluss haben soziale Interaktionen auf das Aneignungsverhalten bezügl
 
 #### Faktorenraum
 
-insert screenshot here
+![Faktorenraum](FaktorenraumICT.png)
