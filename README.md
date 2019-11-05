@@ -13,7 +13,7 @@
 
 #### Forschungsfrage
 
-Welchen Einfluss haben soziale Interaktionen auf das Aneignungsverhalten bezüglich Informations- & Kommunikations-Technologie (ICT)?
+Welchen Einfluss haben soziale Interaktionen im privaten und beruflichen Kontext auf das Aneignungsverhalten bezüglich Informations- & Kommunikations-Technologie (ICT) am Arbeitsplatz?
 
 #### Faktorenraum
 
