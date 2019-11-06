@@ -23,4 +23,4 @@ Welchen Einfluss haben soziale Interaktionen im privaten und beruflichen Kontext
 #### Faktorenraum BETA 
 
 
-![Faktorenraum](IMAGES/FaktorenraumICT4.PNG)
+![Faktorenraum](IMAGES/FaktorenraumICT4.png)
