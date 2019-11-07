@@ -47,7 +47,7 @@ Welchen Einfluss haben soziale Interaktionen im privaten und beruflichen Kontext
 4. [NEIN, ich bekomme keine Vorschläge]
 
 
-*Wenn Sie derartige Vorschläge bekommen: Wem schenken Sie am meisten Vertrauen?*
+*Wenn Sie derartige Vorschläge bekommen: Wem schenken Sie am ehesten Vertrauen?*
 ((6-stufige Likert-Skala - *...vertraue ich vollkommen* bis *...vertraue ich gar nicht*))
 
 1. Allgemeine Vorgabe
