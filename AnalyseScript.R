@@ -2,28 +2,17 @@
 
 #### Bibliotheken laden
 
-## Bibliotheken einmalig installieren (einkaufen):
-# install.packages("tidyverse")
-# install.packages("psych")
-
-## Bibliothek Tidyverse laden (zum Kochen rausstellen)
 library(tidyverse)
-
-## Die Datei qualtricshelpers.R haben wir geschrieben, um 3 weitere Funktionen bereitzustellen.
-## Mit source() "kopieren" Sie qualtricshelpers.R an diese Stelle:
 source("qualtricshelpers.R")
 
 #### Datei laden ----
 
-## Warum betreiben wir DataCleaning?
-## So sehen die Daten aus Qualtrics aus:
-# raw <- read_csv("data/qualtrics_export.csv")
-## So sollen die Daten nachher aussehen, damit wir damit arbeiten können: 
-# data <- read_rds("data/data_musterloesung.rds")
+raw <- read_csv("data/umfrage_testdaten.csv")
 
 ## Daten mit unserer Funktion load_qualtrics_csv einlesen: 
-filename <- "data/qualtrics_export.csv"
-raw <- load_qualtrics_csv(filename)
+datensatz <- "data/umfrage_testdaten.csv"
+raw <- load_qualtrics_csv(datensatz)
+
 
 #### Daten bereinigen ----
 ### Schritt 1: Unnötige Spalten löschen. 

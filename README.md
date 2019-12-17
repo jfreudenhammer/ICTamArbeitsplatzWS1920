@@ -58,3 +58,36 @@ Welchen Einfluss haben soziale Interaktionen im privaten und beruflichen Kontext
 6. Bekannte
 7. Extern (bspw. YT-Tutorial)
 
+#### Hypothesen
+
+Hypothese: Der Grad der sozialen Interaktionen im privaten Umfeld hat Einfluss auf das Aneignungsverhalten von ICT-Nutzern.
+Verfahren: ANCOVA
+H0: Soziale Interaktionen im privaten Umfeld führen bei ICT-Nutzern zu keinem höheren Aneignungsverhalten.
+H1: Ein hoher Grad an sozialer Interaktion im privaten Umfeld führt bei ICT-Nutzern zu einem höheren Aneignungsverhalten.
+
+Hypothese: Der Grad der sozialen Interaktionen im beruflichen Umfeld hat Einfluss auf das Aneignungsverhalten von ICT-Nutzern.
+Verfahren: ANCOVA
+H0: Soziale Interaktionen im beruflichen Umfeld führen bei ICT-Nutzern zu keinem höheren Aneignungsverhalten.
+H1: Ein hoher Grad an sozialer Interaktion im beruflichen Umfeld führt bei ICT-Nutzern zu einem höheren Aneignungsverhalten.
+
+Hypothese: Das Geschlecht von ICT-Nutzern hat einen Einfluss auf das Aneignungsverhalten durch soziale Interaktion.
+Verfahren: T-TEST
+H0: Zwischen den Geschlechtern gibt es keinen signifikaten Unterschied hinsichtlich des ICT-Aneineignungsverhaltens.
+H1: Frauen haben ein höheres ICT-Aneignungsverhalten als die anderen Geschlechter.
+
+Hypothese: Das Alter hat Einfluss auf das Aneignungsverhalten.
+Verfahren: ANOVA
+H0: Das Alter hat keinen Einfluss auf das Aneignungsverhalten.
+H1: Je älter man ist desto niedriger ist das Aneignungsverhalten.
+
+Hypothese: Die Häufigkeit der Nutzung von ICTs hat Einfluss auf das Aneignungsverhalten.
+Verfahren: ANOVA
+H0: Das Alter hat keinen Einfluss auf das Aneignungsverhalten.
+H1: Je älter man ist desto niedriger ist das Aneignungsverhalten.
+
+
+#### Data Cleaning
+
+
+
+
