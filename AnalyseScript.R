@@ -3,42 +3,34 @@
 #### Bibliotheken laden
 
 library(tidyverse)
+library(psych)
+
 source("qualtricshelpers.R")
 
 #### Datei laden ----
 
-raw <- read_csv("data/umfrage_testdaten.csv")
-
-## Daten mit unserer Funktion load_qualtrics_csv einlesen: 
-datensatz <- "data/umfrage_testdaten.csv"
+datensatz <- "data/umfragetestdaten.csv"
 raw <- load_qualtrics_csv(datensatz)
 
-
 #### Daten bereinigen ----
-### Schritt 1: Unnötige Spalten löschen. 
-## Die ausgeschlossenen Fragen sind Systemdaten, Items von anderen Gruppenmitgliedern etc.:
-raw.short <- raw[,c(-1:-17, -22:-28, -58:-118, -121:-125)]
-## Quizfrage: Warum raw.short und nicht raw <- raw[,c(-1:-17, -22:-28, -58:-118, -121:-125)] ?
+names(raw)
+raw.short <- raw[,c(-1:-17, -20:-35, -80:-124)]
+names(raw.short)
 
+### Codebook erstellen
 
-### Schritt 2: Variablen umbenennen 
-## Variante 1:
-# names(raw.short)[5] <- "ati_1"
-## usw... Diese Variante ist sehr umständlich.
-
-## Variante 2: Eine eigene Datei mit den Variablennamen erzeugen:
-generate_codebook(raw.short, filename, "data/codebook.csv")
-## Dann codebook.csv in Excel öffnen, die Vairablennamen in der ersten Spalte per Hand umbenennen, 
-## die Datei als codebook_final.csv abspeichern und hier wieder einlesen:
-codebook <- read_codebook("data/codebook_final_musterloesung.csv")
+generate_codebook(raw.short, datensatz, "data/codebook.csv")
+codebook <- read_codebook("data/codebook_final.csv")
 
 ## neue Namen auf die Daten anwenden:
 names(raw.short) <- codebook$variable
 
-### Schritt 3: Variablen den richtigen Typen zuordnen
+### Variablen den richtigen Typen zuordnen
 
 ## Gender zu kategorialer Variable machen:
 raw.short$gender <- as.factor(raw.short$gender)
+
+###################
 
 ## Schulabschluss zu ordinaler Variable machen:
 raw.short$edu1 <- ordered(raw.short$edu1, levels = c("(noch) kein Schulabschluss",
@@ -89,11 +81,11 @@ raw.short$vb_allg_4 <- ordered(raw.short$vb_allg_4, levels = scale.zustimmung)
 
 ## Die AAZ-Items messen ausnahmsweise mit "Trifft sehr zu". Wir brauchen also eine zweite Skala:
 scale.zustimmung2 <-c("Trifft gar nicht zu", 
-                     "Trifft nicht zu", 
-                     "Trifft eher nicht zu", 
-                     "Trifft eher zu", 
-                     "Trifft zu", 
-                     "Trifft völlig zu")
+                      "Trifft nicht zu", 
+                      "Trifft eher nicht zu", 
+                      "Trifft eher zu", 
+                      "Trifft zu", 
+                      "Trifft völlig zu")
 
 raw.short$aaz_1 <- ordered(raw.short$aaz_1, levels = scale.zustimmung2)
 raw.short$aaz_2 <- ordered(raw.short$aaz_2, levels = scale.zustimmung2)
