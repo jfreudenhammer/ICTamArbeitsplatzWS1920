@@ -27,85 +27,299 @@ names(raw.short) <- codebook$variable
 
 ### Variablen den richtigen Typen zuordnen
 
-## Gender zu kategorialer Variable machen:
 raw.short$gender <- as.factor(raw.short$gender)
 
-###################
+#raw.short$age <- ???
 
-## Schulabschluss zu ordinaler Variable machen:
-raw.short$edu1 <- ordered(raw.short$edu1, levels = c("(noch) kein Schulabschluss",
-                                                     "Haupt-/ Volksschulsabschluss",
-                                                     "Realschulabschluss",
-                                                     "Abitur/Fachabitur"))
+raw.short$devices <- as.factor(raw.short$devices)
+  
+raw.short$tools_chat <- ordered(raw.short$tools_chat, levels = c("Ich kenne solche Programme nicht",
+                                                     "Damit arbeite ich nie",
+                                                     "Damit arbeite ich selten",
+                                                     "Damit arbeite ich hin und wieder",
+                                                     "Damit arbeite ich häufig"))
 
-raw.short$edu2 <- ordered(raw.short$edu2, levels = c("noch keine Ausbildung",
-                                                     "Berufsausbildung",
-                                                     "Meister",
-                                                     "Hochschulabschluss",
-                                                     "Promotion"))
+raw.short$tools_mail <- ordered(raw.short$tools_mail, levels = c("Ich kenne solche Programme nicht",
+                                                                 "Damit arbeite ich nie",
+                                                                 "Damit arbeite ich selten",
+                                                                 "Damit arbeite ich hin und wieder",
+                                                                 "Damit arbeite ich häufig"))
+
+raw.short$tools_ticket <- ordered(raw.short$tools_ticket, levels = c("Ich kenne solche Programme nicht",
+                                                                 "Damit arbeite ich nie",
+                                                                 "Damit arbeite ich selten",
+                                                                 "Damit arbeite ich hin und wieder",
+                                                                 "Damit arbeite ich häufig"))
+
+raw.short$tools_orga <- ordered(raw.short$tools_orga, levels = c("Ich kenne solche Programme nicht",
+                                                                     "Damit arbeite ich nie",
+                                                                     "Damit arbeite ich selten",
+                                                                     "Damit arbeite ich hin und wieder",
+                                                                     "Damit arbeite ich häufig"))
+
+raw.short$ict_contact <- as.factor(raw.short$ict_contact)
 
 
-## Nun zu den einzelnen Likert-Items:
-## Diese Variante wäre zu umständlich für jedes Item:
-raw.short$ati_1 <- ordered(raw.short$ati_1, levels = c("Stimme gar nicht zu", 
-                                                       "Stimme nicht zu", 
-                                                       "Stimme eher nicht zu", 
-                                                       "Stimme eher zu", 
-                                                       "Stimme zu", 
+
+
+raw.short$ict_usage_com <- ordered(raw.short$ict_usage_com, levels = c("Nie",
+                                                     "Weniger als einmal im Monat",
+                                                     "Weniger als einmal pro Woche",
+                                                     "Ein- bis zweimal pro Woche",
+                                                     "Täglich",
+                                                     "mehrmals täglich"))
+
+raw.short$ict_usage_colab <- ordered(raw.short$ict_usage_colab, levels = c("Nie",
+                                                                       "Weniger als einmal im Monat",
+                                                                       "Weniger als einmal pro Woche",
+                                                                       "Ein- bis zweimal pro Woche",
+                                                                       "Täglich",
+                                                                       "mehrmals täglich"))
+
+raw.short$ict_working_process_1 <- ordered(raw.short$ict_working_process_1, levels = c("Stimme gar nicht zu",
+                                                                           "Stimme nicht zu",
+                                                                           "Stimme eher nicht zu",
+                                                                           "Stimme eher zu",
+                                                                           "Stimme zu",
+                                                                           "Stimme völlig zu"))
+
+raw.short$ict_working_process_2 <- ordered(raw.short$ict_working_process_2, levels = c("Stimme gar nicht zu",
+                                                                                       "Stimme nicht zu",
+                                                                                       "Stimme eher nicht zu",
+                                                                                       "Stimme eher zu",
+                                                                                       "Stimme zu",
+                                                                                       "Stimme völlig zu"))
+
+raw.short$ict_working_process_3 <- ordered(raw.short$ict_working_process_3, levels = c("Stimme gar nicht zu",
+                                                                                       "Stimme nicht zu",
+                                                                                       "Stimme eher nicht zu",
+                                                                                       "Stimme eher zu",
+                                                                                       "Stimme zu",
+                                                                                       "Stimme völlig zu"))
+
+raw.short$ict_working_process_4 <- ordered(raw.short$ict_working_process_4, levels = c("Stimme gar nicht zu",
+                                                                                       "Stimme nicht zu",
+                                                                                       "Stimme eher nicht zu",
+                                                                                       "Stimme eher zu",
+                                                                                       "Stimme zu",
+                                                                                       "Stimme völlig zu"))
+
+raw.short$ict_working_process_5 <- ordered(raw.short$ict_working_process_5, levels = c("Stimme gar nicht zu",
+                                                                                       "Stimme nicht zu",
+                                                                                       "Stimme eher nicht zu",
+                                                                                       "Stimme eher zu",
+                                                                                       "Stimme zu",
+                                                                                       "Stimme völlig zu"))
+
+raw.short$tui_1 <- ordered(raw.short$tui_1, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
                                                        "Stimme völlig zu"))
 
-## Alternativ: Skala für Likertskala einmal anlegen...
-scale.zustimmung <-c("Stimme gar nicht zu", 
-                     "Stimme nicht zu", 
-                     "Stimme eher nicht zu", 
-                     "Stimme eher zu", 
-                     "Stimme zu", 
-                     "Stimme völlig zu")
+raw.short$tui_2 <- ordered(raw.short$tui_2, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
 
-## ... und für jedes Item verwenden:
-raw.short$ati_1 <- ordered(raw.short$ati_1, levels = scale.zustimmung)
-raw.short$ati_2 <- ordered(raw.short$ati_2, levels = scale.zustimmung)
-raw.short$ati_3 <- ordered(raw.short$ati_3, levels = scale.zustimmung)
-raw.short$ati_4 <- ordered(raw.short$ati_4, levels = scale.zustimmung)
-raw.short$ati_5 <- ordered(raw.short$ati_5, levels = scale.zustimmung)
-raw.short$ati_6 <- ordered(raw.short$ati_6, levels = scale.zustimmung)
-raw.short$ati_7 <- ordered(raw.short$ati_7, levels = scale.zustimmung)
-raw.short$ati_8 <- ordered(raw.short$ati_8, levels = scale.zustimmung)
-raw.short$ati_9 <- ordered(raw.short$ati_9, levels = scale.zustimmung)
+raw.short$tui_3 <- ordered(raw.short$tui_3, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
 
-raw.short$vb_allg_1 <- ordered(raw.short$vb_allg_1, levels = scale.zustimmung)
-raw.short$vb_allg_2 <- ordered(raw.short$vb_allg_2, levels = scale.zustimmung)
-raw.short$vb_allg_3 <- ordered(raw.short$vb_allg_3, levels = scale.zustimmung)
-raw.short$vb_allg_4 <- ordered(raw.short$vb_allg_4, levels = scale.zustimmung)
+raw.short$tui_4 <- ordered(raw.short$tui_4, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_5 <- ordered(raw.short$tui_5, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_6 <- ordered(raw.short$tui_6, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_7 <- ordered(raw.short$tui_7, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_8 <- ordered(raw.short$tui_8, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_9 <- ordered(raw.short$tui_9, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_10 <- ordered(raw.short$tui_10, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_11 <- ordered(raw.short$tui_11, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_12 <- ordered(raw.short$tui_12, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_13 <- ordered(raw.short$tui_13, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_14 <- ordered(raw.short$tui_14, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
+
+raw.short$tui_15 <- ordered(raw.short$tui_15, levels = c("Stimme gar nicht zu",
+                                                       "Stimme nicht zu",
+                                                       "Stimme eher nicht zu",
+                                                       "Stimme eher zu",
+                                                       "Stimme zu",
+                                                       "Stimme völlig zu"))
 
 
-## Die AAZ-Items messen ausnahmsweise mit "Trifft sehr zu". Wir brauchen also eine zweite Skala:
-scale.zustimmung2 <-c("Trifft gar nicht zu", 
-                      "Trifft nicht zu", 
-                      "Trifft eher nicht zu", 
-                      "Trifft eher zu", 
-                      "Trifft zu", 
-                      "Trifft völlig zu")
+raw.short$ict_adoption <- as.factor(raw.short$ict_adoption)
 
-raw.short$aaz_1 <- ordered(raw.short$aaz_1, levels = scale.zustimmung2)
-raw.short$aaz_2 <- ordered(raw.short$aaz_2, levels = scale.zustimmung2)
-raw.short$aaz_3 <- ordered(raw.short$aaz_3, levels = scale.zustimmung2)
-raw.short$aaz_4 <- ordered(raw.short$aaz_4, levels = scale.zustimmung2)
-raw.short$aaz_5 <- ordered(raw.short$aaz_5, levels = scale.zustimmung2)
-raw.short$aaz_6 <- ordered(raw.short$aaz_6, levels = scale.zustimmung2)
-raw.short$aaz_7 <- ordered(raw.short$aaz_7, levels = scale.zustimmung2)
-raw.short$aaz_8 <- ordered(raw.short$aaz_8, levels = scale.zustimmung2)
+raw.short$ict_rec_corp <- ordered(raw.short$ict_rec_corp, levels = c("Sehr selten",
+                                                         "selten",
+                                                         "eher selten",
+                                                         "eher häufig",
+                                                         "häufig",
+                                                         "sehr häufig"))
 
-## Promotion / Prevention wieder normal mit "Stimme sehr zu":
-raw.short$pro_1 <- ordered(raw.short$pro_1, levels = scale.zustimmung)
-raw.short$pro_2 <- ordered(raw.short$pro_2, levels = scale.zustimmung)
-raw.short$pro_3 <- ordered(raw.short$pro_3, levels = scale.zustimmung)
-raw.short$pro_4 <- ordered(raw.short$pro_4, levels = scale.zustimmung)
+raw.short$ict_rec_boss <- ordered(raw.short$ict_rec_boss, levels = c("Sehr selten",
+                                                                     "selten",
+                                                                     "eher selten",
+                                                                     "eher häufig",
+                                                                     "häufig",
+                                                                     "sehr häufig"))
 
-raw.short$pre_1 <- ordered(raw.short$pre_1, levels = scale.zustimmung)
-raw.short$pre_2 <- ordered(raw.short$pre_2, levels = scale.zustimmung)
-raw.short$pre_3 <- ordered(raw.short$pre_3, levels = scale.zustimmung)
-raw.short$pre_4 <- ordered(raw.short$pre_4, levels = scale.zustimmung)
+raw.short$ict_rec_cow <- ordered(raw.short$ict_rec_cow, levels = c("Sehr selten",
+                                                                     "selten",
+                                                                     "eher selten",
+                                                                     "eher häufig",
+                                                                     "häufig",
+                                                                     "sehr häufig"))
+
+raw.short$ict_rec_friends <- ordered(raw.short$ict_rec_friends, levels = c("Sehr selten",
+                                                                     "selten",
+                                                                     "eher selten",
+                                                                     "eher häufig",
+                                                                     "häufig",
+                                                                     "sehr häufig"))
+
+raw.short$ict_rec_fam <- ordered(raw.short$ict_rec_fam, levels = c("Sehr selten",
+                                                                     "selten",
+                                                                     "eher selten",
+                                                                     "eher häufig",
+                                                                     "häufig",
+                                                                     "sehr häufig"))
+
+raw.short$ict_rec_acq <- ordered(raw.short$ict_rec_acq, levels = c("Sehr selten",
+                                                                     "selten",
+                                                                     "eher selten",
+                                                                     "eher häufig",
+                                                                     "häufig",
+                                                                     "sehr häufig"))
+
+raw.short$ict_rec_alt <- ordered(raw.short$ict_rec_alt, levels = c("Sehr selten",
+                                                                     "selten",
+                                                                     "eher selten",
+                                                                     "eher häufig",
+                                                                     "häufig",
+                                                                     "sehr häufig"))
+
+
+####
+
+raw.short$ict_trust_corp <- ordered(raw.short$ict_trust_corp, levels = c("Vollstes Misstrauen",
+                                                                     "Misstraue ich sehr",
+                                                                     "Misstraue ich etwas",
+                                                                     "Vertraue ich etwas",
+                                                                     "Vertraue ich sehr",
+                                                                     "Vollstes Vertrauen"))
+
+raw.short$ict_trust_boss <- ordered(raw.short$ict_trust_boss, levels = c("Vollstes Misstrauen",
+                                                                         "Misstraue ich sehr",
+                                                                         "Misstraue ich etwas",
+                                                                         "Vertraue ich etwas",
+                                                                         "Vertraue ich sehr",
+                                                                         "Vollstes Vertrauen"))
+
+raw.short$ict_trust_cow <- ordered(raw.short$ict_trust_cow, levels = c("Vollstes Misstrauen",
+                                                                       "Misstraue ich sehr",
+                                                                       "Misstraue ich etwas",
+                                                                       "Vertraue ich etwas",
+                                                                       "Vertraue ich sehr",
+                                                                       "Vollstes Vertrauen"))
+
+raw.short$ict_trust_friends <- ordered(raw.short$ict_trust_friends, levels = c("Vollstes Misstrauen",
+                                                                               "Misstraue ich sehr",
+                                                                               "Misstraue ich etwas",
+                                                                               "Vertraue ich etwas",
+                                                                               "Vertraue ich sehr",
+                                                                               "Vollstes Vertrauen"))
+
+raw.short$ict_trust_fam <- ordered(raw.short$ict_trust_fam, levels = c("Vollstes Misstrauen",
+                                                                       "Misstraue ich sehr",
+                                                                       "Misstraue ich etwas",
+                                                                       "Vertraue ich etwas",
+                                                                       "Vertraue ich sehr",
+                                                                       "Vollstes Vertrauen"))
+
+raw.short$ict_trust_acq <- ordered(raw.short$ict_trust_acq, levels = c("Vollstes Misstrauen",
+                                                                       "Misstraue ich sehr",
+                                                                       "Misstraue ich etwas",
+                                                                       "Vertraue ich etwas",
+                                                                       "Vertraue ich sehr",
+                                                                       "Vollstes Vertrauen"))
+
+raw.short$ict_trust_alt <- ordered(raw.short$ict_trust_alt, levels = c("Vollstes Misstrauen",
+                                                                       "Misstraue ich sehr",
+                                                                       "Misstraue ich etwas",
+                                                                       "Vertraue ich etwas",
+                                                                       "Vertraue ich sehr",
+                                                                       "Vollstes Vertrauen"))
+
 
 
 ### Schritt 4: Skalen berechnen
