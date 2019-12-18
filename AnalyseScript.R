@@ -322,6 +322,10 @@ raw.short$ict_trust_alt <- ordered(raw.short$ict_trust_alt, levels = c("Vollstes
 
 
 
+
+####################################################### beyond this line is nowhere land
+
+
 ### Schritt 4: Skalen berechnen
 
 ## Jetzt benötigen wir die psych-bibliothek.
