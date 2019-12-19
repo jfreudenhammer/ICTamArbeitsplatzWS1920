@@ -362,6 +362,6 @@ saveRDS(data, "data/data.rds")
 
 ## Fertig.
 
-## JRH: Sieht sehr gut aus! Die Skalen hätten sie auch einmal anlegen können, aber das ist eher kosmetisch. 
+## JRH: Sieht bisher sehr gut aus, die Skalenberechnung schaffen Sie auch noch. 
 
 
