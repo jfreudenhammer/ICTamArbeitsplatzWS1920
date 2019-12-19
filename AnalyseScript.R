@@ -32,6 +32,7 @@ raw.short$gender <- as.factor(raw.short$gender)
 #raw.short$age <- ???
 
 raw.short$devices <- as.factor(raw.short$devices)
+
   
 raw.short$tools_chat <- ordered(raw.short$tools_chat, levels = c("Ich kenne solche Programme nicht",
                                                      "Damit arbeite ich nie",
@@ -360,3 +361,7 @@ data <- data %>%
 saveRDS(data, "data/data.rds")
 
 ## Fertig.
+
+## JRH: Sieht sehr gut aus! Die Skalen hätten sie auch einmal anlegen können, aber das ist eher kosmetisch. 
+
+
