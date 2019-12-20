@@ -330,37 +330,33 @@ raw.short$ict_trust_alt <- ordered(raw.short$ict_trust_alt, levels = c("Vollstes
 
 ### Schritt 4: Skalen berechnen
 
-
-## Der scoreItems-Befehl benötigt eine Liste der folgenden Gestalt. Negative Items sind mit Minus gekennzeichnet.
-
 schluesselliste <- list(IKT = c("ict_working_process_1","ict_working_process_2","ict_working_process_3","ict_working_process_4","ict_working_process_5"),
-                        TUI = c("tui_1","tui_2","tui_3","tui_4","tui_5","tui_6","tui_7","tui_8","tui_9","tui_10","tui_11","tui_12","tui_13","tui_14","tui_15"),
-                             
-                   )
+                        TUI = c("-tui_1","-tui_2","tui_3","tui_4","tui_5","tui_6","tui_7","tui_8","-tui_9","-tui_10","-tui_11","-tui_12","tui_13","tui_14","tui_15"))
       
 
-## Hier werden die Skalen berechnet: 
-scores <- scoreItems(schluesselliste, raw.short, missing = TRUE, min = 1, max = 6)
+## Skalen berechnen: 
+scores <- scoreItems(schluesselliste, raw.short, missing = TRUE, min = 0, max = 5)
 
 
-## Die errechneten Scores ATI, VBA usw. werden hinten als Spalten an raw.short angefügt:
+## Die errechneten Scores werden hinten als Spalten an raw.short angefügt:
 data <- bind_cols(raw.short, as_tibble(scores$scores))
 
-## Über den pipe-operator %>% sprechen wir nochmal in Ruhe. 
-## Da wir die Konstrukte ja schon berechnet haben, haben wir für die einzelnen Items keine Verwendung mehr. 
+
+
+
+
+#######################################
+
 ## Hierdurch entfernen wir alle Einzelitems. Wörtlich: "Entferne alle Spalten, die mit kleingeschriebenem "ati" beginnen usw. 
-data <- data %>% 
-  select(-starts_with("ati", ignore.case = F)) %>% 
-  select(-starts_with("vb", ignore.case = F)) %>%
-  select(-starts_with("aaz", ignore.case = F)) %>%
-  select(-starts_with("pre", ignore.case = F)) %>%
-  select(-starts_with("pro", ignore.case = F))
+#data <- data %>% 
+#  select(-starts_with("ati", ignore.case = F)) %>% 
+ # select(-starts_with("vb", ignore.case = F)) %>%
+  #select(-starts_with("aaz", ignore.case = F)) %>%
+  #select(-starts_with("pre", ignore.case = F)) %>%
+  #select(-starts_with("pro", ignore.case = F))
 
-## data sieht jetzt genau so aus wie in der Musterlösung und kann abgespeichert werden:
-saveRDS(data, "data/data.rds")
+#saveRDS(data, "data/data.rds")
 
-## Fertig.
 
-## JRH: Sieht bisher sehr gut aus, die Skalenberechnung schaffen Sie auch noch. 
 
 
