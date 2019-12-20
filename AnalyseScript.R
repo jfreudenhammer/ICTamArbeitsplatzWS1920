@@ -341,21 +341,11 @@ scores <- scoreItems(schluesselliste, raw.short, missing = TRUE, min = 0, max = 
 ## Die errechneten Scores werden hinten als Spalten an raw.short angefügt:
 data <- bind_cols(raw.short, as_tibble(scores$scores))
 
+data <- data %>% 
+select(-starts_with("ict_working_process", ignore.case = F)) %>% 
+select(-starts_with("tui", ignore.case = F))
 
-
-
-
-#######################################
-
-## Hierdurch entfernen wir alle Einzelitems. Wörtlich: "Entferne alle Spalten, die mit kleingeschriebenem "ati" beginnen usw. 
-#data <- data %>% 
-#  select(-starts_with("ati", ignore.case = F)) %>% 
- # select(-starts_with("vb", ignore.case = F)) %>%
-  #select(-starts_with("aaz", ignore.case = F)) %>%
-  #select(-starts_with("pre", ignore.case = F)) %>%
-  #select(-starts_with("pro", ignore.case = F))
-
-#saveRDS(data, "data/data.rds")
+saveRDS(data, "data/data.rds")
 
 
 
