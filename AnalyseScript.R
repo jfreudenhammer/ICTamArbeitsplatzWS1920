@@ -29,7 +29,20 @@ names(raw.short) <- codebook$variable
 
 raw.short$gender <- as.factor(raw.short$gender)
 
-#raw.short$age <- ???
+raw.short$edu <- ordered(raw.short$edu, levels = c("kein Schulabschluss",
+                                                    "Hauptschulabschluss",
+                                                    "Realschule (Mittlere Reife)",
+                                                    "Fachabitur",
+                                                    "Allg. Hochschulreife (Abitur)",
+                                                    "Abgeschlossene Ausbildung",
+                                                    "Bachelor",
+                                                    "Master",
+                                                    "Diplom",
+                                                    "Promotion"))
+
+raw.short$job_type <- as.factor(raw.short$job_type)
+
+raw.short$job_field <- as.factor(raw.short$job_field)
 
 raw.short$devices <- as.factor(raw.short$devices)
 
@@ -315,24 +328,16 @@ raw.short$ict_trust_alt <- ordered(raw.short$ict_trust_alt, levels = c("Vollstes
                                                                        "Vertraue ich sehr",
                                                                        "Vollstes Vertrauen"))
 
-
-
-
-####################################################### beyond this line is nowhere land
-
-
 ### Schritt 4: Skalen berechnen
 
-## Jetzt benötigen wir die psych-bibliothek.
-library(psych)
 
 ## Der scoreItems-Befehl benötigt eine Liste der folgenden Gestalt. Negative Items sind mit Minus gekennzeichnet.
-schluesselliste <- list(ATI = c("ati_1", "ati_2", "-ati_3", "ati_4", "ati_5", "-ati_6", "ati_7", "-ati_8", "ati_9"),
-                        VBA = c("-vb_allg_1", "vb_allg_2", "-vb_allg_3", "vb_allg_4"),
-                        AAZ = c("-aaz_1", "aaz_2", "-aaz_3", "aaz_4", "aaz_5", "aaz_6", "aaz_7", "aaz_8"),
-                        PRO = c("pro_1", "pro_2", "pro_3", "pro_4"),
-                        PRE = c("pre_1", "pre_2", "pre_3", "pre_4")
-)
+
+schluesselliste <- list(IKT = c("ict_working_process_1","ict_working_process_2","ict_working_process_3","ict_working_process_4","ict_working_process_5"),
+                        TUI = c("tui_1","tui_2","tui_3","tui_4","tui_5","tui_6","tui_7","tui_8","tui_9","tui_10","tui_11","tui_12","tui_13","tui_14","tui_15"),
+                             
+                   )
+      
 
 ## Hier werden die Skalen berechnet: 
 scores <- scoreItems(schluesselliste, raw.short, missing = TRUE, min = 1, max = 6)
