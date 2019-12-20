@@ -14,7 +14,7 @@ raw <- load_qualtrics_csv(datensatz)
 
 #### Daten bereinigen ----
 names(raw)
-raw.short <- raw[,c(-1:-17, -20:-35, -80:-124)]
+raw.short <- raw[,c(-1:-17, -24:-35, -80:-124)]
 names(raw.short)
 
 ### Codebook erstellen
@@ -59,9 +59,6 @@ raw.short$tools_orga <- ordered(raw.short$tools_orga, levels = c("Ich kenne solc
                                                                      "Damit arbeite ich häufig"))
 
 raw.short$ict_contact <- as.factor(raw.short$ict_contact)
-
-
-
 
 raw.short$ict_usage_com <- ordered(raw.short$ict_usage_com, levels = c("Nie",
                                                      "Weniger als einmal im Monat",
@@ -268,9 +265,6 @@ raw.short$ict_rec_alt <- ordered(raw.short$ict_rec_alt, levels = c("Sehr selten"
                                                                      "eher häufig",
                                                                      "häufig",
                                                                      "sehr häufig"))
-
-
-####
 
 raw.short$ict_trust_corp <- ordered(raw.short$ict_trust_corp, levels = c("Vollstes Misstrauen",
                                                                      "Misstraue ich sehr",
