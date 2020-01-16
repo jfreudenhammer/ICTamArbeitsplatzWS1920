@@ -33,63 +33,61 @@ Welchen Einfluss haben soziale Interaktionen im privaten und beruflichen Kontext
 
 ##### Teil 2: Technology Usage Inventory
 
-*Auswahl aus den 30 gegebenen TUI-Items*
-
+* Technologieängstlichkeit (ANG)
+* Interesse (INT)
+* Benutzerfreundlichkeit (BEN)
+* Nützlichkeit (NÜT)
+* Skepsis (SKE)
+* Intention to use (ITU)
 
 ##### Teil 3: ICT-Aneignungsverhalten am Arbeitsplatz
 
+* Nutzungshäufigkeit von Kommunikationstechnologie
+* Nutzungshäufigkeit von Kolaborationstechnologie
+* Bewertung & Meinung ICT
 
-*Haben Sie im privaten oder beruflichen Umfeld schon mal Vorschläge zur beruflichen Nutzung bestimmter technischer Tools, Software, Apps oder anderen digitalen Services erhalten?*
+##### Teil 4: Soziale Interaktion
 
-1. [JA, aus dem beruflichen Umfeld]
-2. [JA, aus dem privaten Umfeld]
-3. [JA, aus beiden]
-4. [NEIN, ich bekomme keine Vorschläge]
+* Häufigkeit sozialer Interaktion bezüglich ICT
+* Vertrauen in soziale Interaktion bezüglich ICT
 
-
-*Wenn Sie derartige Vorschläge bekommen: Wem schenken Sie am ehesten Vertrauen?*
-((6-stufige Likert-Skala - *...vertraue ich vollkommen* bis *...vertraue ich gar nicht*))
-
-1. Allgemeine Vorgabe
-2. Vorgesetzte/r
-3. Arbeitskollege/kollegin
-4. Verwandte
-5. Freunde
-6. Bekannte
-7. Extern (bspw. YT-Tutorial)
 
 #### Hypothesen
 
-Hypothese: Der Grad der sozialen Interaktionen im privaten Umfeld hat Einfluss auf das Aneignungsverhalten von ICT-Nutzern.
-Verfahren: ANCOVA
+#Hypothese: Der Grad der sozialen Interaktionen im privaten Umfeld hat Einfluss auf das Aneignungsverhalten von ICT-Nutzern.
+Verfahren: Pearson Moment Korrelation
 H0: Soziale Interaktionen im privaten Umfeld führen bei ICT-Nutzern zu keinem höheren Aneignungsverhalten.
 H1: Ein hoher Grad an sozialer Interaktion im privaten Umfeld führt bei ICT-Nutzern zu einem höheren Aneignungsverhalten.
-Feedback: Ancova klingt nach der falschen Methode, oder ist der Grad der sozialen Interkation als nominale Variable realisiert? Dann würde immer noch die Covariate fehlen. 
+Anmerkung: Kandität für Präsentation
 
-Hypothese: Der Grad der sozialen Interaktionen im beruflichen Umfeld hat Einfluss auf das Aneignungsverhalten von ICT-Nutzern.
-Verfahren: ANCOVA
+
+#Hypothese: Der Grad der sozialen Interaktionen im beruflichen Umfeld hat Einfluss auf das Aneignungsverhalten von ICT-Nutzern.
+Verfahren: Pearson Moment Korrelation
 H0: Soziale Interaktionen im beruflichen Umfeld führen bei ICT-Nutzern zu keinem höheren Aneignungsverhalten.
 H1: Ein hoher Grad an sozialer Interaktion im beruflichen Umfeld führt bei ICT-Nutzern zu einem höheren Aneignungsverhalten.
-Feedback: Wie bei Hypothese 1
+Anmerkung: Kandität für Präsentation
 
 
-Hypothese: Das Geschlecht von ICT-Nutzern hat einen Einfluss auf das Aneignungsverhalten durch soziale Interaktion.
-Verfahren: T-TEST
+#Hypothese: Das Geschlecht von ICT-Nutzern hat einen Einfluss auf das Aneignungsverhalten durch soziale Interaktion.
+Verfahren: T-TEST (Unverbunden!)
 H0: Zwischen den Geschlechtern gibt es keinen signifikaten Unterschied hinsichtlich des ICT-Aneineignungsverhaltens.
 H1: Frauen haben ein höheres ICT-Aneignungsverhalten als die anderen Geschlechter.
-Feedback: Super! Streng genommen **Unverbundener** T-Test.
+Anmerkung: Kandität für Präsentation
 
-Hypothese: Das Alter hat Einfluss auf das Aneignungsverhalten.
-Verfahren: ANOVA
+
+
+#Hypothese: Das Alter hat Einfluss auf das Aneignungsverhalten.
+Verfahren: ANOVA/ANCOVA
 H0: Das Alter hat keinen Einfluss auf das Aneignungsverhalten.
 H1: Je älter man ist desto niedriger ist das Aneignungsverhalten.
-Feedback: Klingt eher nach Korrelation. Wenn Sie das unbedingt mit ANOVA rechnen möchten, müssten Sie mehr als zwei oder mehr Altersgruppen bilden. Ihre Entscheidung :-)
+Anmerkung: Die Probanden werden hierfür in 5 Altersgruppen unterteilt: (18-24; 25-34; 35-44; 45-59; 60+)
 
-Hypothese: Die Häufigkeit der Nutzung von ICTs hat Einfluss auf das Aneignungsverhalten.
-Verfahren: ANOVA
+
+#Hypothese: Die Häufigkeit der Nutzung von ICTs hat Einfluss auf das Aneignungsverhalten.
+Verfahren: Spearman (? (-:)
 H0: Das Alter hat keinen Einfluss auf das Aneignungsverhalten.
 H1: Je älter man ist desto niedriger ist das Aneignungsverhalten.
-Feedback: Genau wie bei den anderen Hypothesen, klingt das eher nach Korrelation. Bitte nochmal Gründlich darüber nachdenken, auf welche Variablen sich das jeweils beziehen soll :-)
+
 
 
 #### Data Cleaning
