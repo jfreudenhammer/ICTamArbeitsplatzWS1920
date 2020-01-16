@@ -92,6 +92,11 @@ H1: Je älter man ist desto niedriger ist das Aneignungsverhalten.
 
 #### Data Cleaning
 
+Probandenanzahl gefiltert nach Bearbeitungsdauer:
+* >5  min: 385
+* >8  min: 355
+* >10 min: 301
+Anmerkung: Filterempfehlung?
 
 
 
