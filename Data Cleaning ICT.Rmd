@@ -18,7 +18,7 @@ source("qualtricshelpers.R")
 #### Datei laden ----
 
 library(readxl)
-raw <- read_excel("Umfragedaten.xlsx")
+raw <- read_excel("data/Umfragedaten.xlsx")
 View(raw)
 
 #### Daten bereinigen ----
@@ -35,7 +35,7 @@ view(raw.short)
 
 
 library(readxl)
-codebook_final <- read_excel("codebook_final.xlsx")
+codebook_final <- read_excel("data/codebook_final.xlsx")
 View(codebook_final)
 
 ## neue Namen auf die Daten anwenden:
