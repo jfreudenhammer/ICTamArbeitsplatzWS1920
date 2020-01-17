@@ -77,10 +77,10 @@ Anmerkung: Kandität für Präsentation
 
 
 #Hypothese: Das Alter hat Einfluss auf das Aneignungsverhalten.
-Verfahren: ANOVA/ANCOVA
+Verfahren: T-Test
 H0: Das Alter hat keinen Einfluss auf das Aneignungsverhalten.
 H1: Je älter man ist desto niedriger ist das Aneignungsverhalten.
-Anmerkung: Die Probanden werden hierfür in 5 Altersgruppen unterteilt: (18-24; 25-34; 35-44; 45-59; 60+)
+Anmerkung: Die Probanden werden hierfür via Mediansplit in 2 Altersgruppen unterteilt
 
 
 #Hypothese: Die Häufigkeit der Nutzung von ICTs hat Einfluss auf das Aneignungsverhalten.
