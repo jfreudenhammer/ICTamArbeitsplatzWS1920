@@ -18,18 +18,24 @@ source("qualtricshelpers.R")
 #### Datei laden ----
 
 library(readxl)
-raw <- read_excel("Umfragedaten.xlsx")
+raw <- read_excel("data/Umfragedaten.xlsx")
 View(raw)
 
 #### Daten bereinigen ----
 names(raw)
-raw.short <- raw[,c(-1:-17, -29:-35, -84:-129)]
+raw.short <- raw[,c(-1:-17, -21:-35, -83:-127) ]
 names(raw.short)
 view(raw.short)
 ### Codebook erstellen
 
+
+#daten_neu <- haven::read_sav("daten.sav")
+
+#daten_neu$kut_1
+
+
 library(readxl)
-codebook_final <- read_excel("codebook_final.xlsx")
+codebook_final <- read_excel("data/codebook_final.xlsx")
 View(codebook_final)
 
 ## neue Namen auf die Daten anwenden:
@@ -68,28 +74,28 @@ raw.short$tools_chat <- ordered(raw.short$tools_chat, levels = c("
                                               "Damit arbeite ich nie",
                                               "Damit arbeite ich selten",
                                               "Damit arbeite ich hin und wieder",
-                                              "Damit arbeite ich häufig"))
+                                              "Damit arbeite ich haeufig"))
 
 raw.short$tools_mail <- ordered(raw.short$tools_mail, levels = c("
                                                Ich kenne solche Programme nicht",
                                                "Damit arbeite ich nie",
                                                "Damit arbeite ich selten",
                                                "Damit arbeite ich hin und wieder",
-                                               "Damit arbeite ich häufig"))
+                                               "Damit arbeite ich haeufig"))
 
 raw.short$tools_ticket <- ordered(raw.short$tools_ticket, levels = c("
                                                  Ich kenne solche Programme nicht",
                                                  "Damit arbeite ich nie",
                                                  "Damit arbeite ich selten",
                                                  "Damit arbeite ich hin und wieder",
-                                                 "Damit arbeite ich häufig"))
+                                                 "Damit arbeite ich haeufig"))
 
 raw.short$tools_orga <- ordered(raw.short$tools_orga, levels = c("
                                                   Ich kenne solche Programme nicht",
                                                  "Damit arbeite ich nie",
                                                  "Damit arbeite ich selten",
                                                  "Damit arbeite ich hin und wieder",
-                                                 "Damit arbeite ich häufig"))
+                                                 "Damit arbeite ich haeufig"))
 
 raw.short$ict_contact <- as.factor(raw.short$ict_contact)
 
@@ -97,156 +103,156 @@ raw.short$ict_usage_com <- ordered(raw.short$ict_usage_com, levels = c("Nie",
                                                      "Weniger als einmal im Monat",
                                                      "Weniger als einmal pro Woche",
                                                      "Ein- bis zweimal pro Woche",
-                                                     "Täglich",
-                                                     "mehrmals täglich"))
+                                                     "Taeglich",
+                                                     "mehrmals taeglich"))
 
 raw.short$ict_usage_colab <- ordered(raw.short$ict_usage_colab, levels = c("
                                                       Nie",
                                                      "Weniger als einmal im Monat",
                                                      "Weniger als einmal pro Woche",
                                                      "Ein- bis zweimal pro Woche",
-                                                     "Täglich",
-                                                     "mehrmals täglich"))
+                                                     "Taeglich",
+                                                     "mehrmals taeglich"))
 
 raw.short$ict_working_process_1 <- ordered(raw.short$ict_working_process_1, levels = c("Stimme gar nicht zu",
   "Stimme nicht zu",
   "Stimme eher nicht zu",
   "Stimme eher zu",
   "Stimme zu",
-  "Stimme völlig zu"))
+  "Stimme voellig zu"))
 
 raw.short$ict_working_process_2 <- ordered(raw.short$ict_working_process_2, levels = c("Stimme gar nicht zu",
   "Stimme nicht zu",
   "Stimme eher nicht zu",
   "Stimme eher zu",
   "Stimme zu",
-  "Stimme völlig zu"))
+  "Stimme voellig zu"))
 
 raw.short$ict_working_process_3 <- ordered(raw.short$ict_working_process_3, levels = c("Stimme gar nicht zu",
   "Stimme nicht zu",
   "Stimme eher nicht zu",
   "Stimme eher zu",
   "Stimme zu",
-  "Stimme völlig zu"))
+  "Stimme voellig zu"))
 
 raw.short$ict_working_process_4 <- ordered(raw.short$ict_working_process_4, levels = c("Stimme gar nicht zu",
   "Stimme nicht zu",
   "Stimme eher nicht zu",
   "Stimme eher zu",
   "Stimme zu",
-  "Stimme völlig zu"))
+  "Stimme voellig zu"))
 
 raw.short$ict_working_process_5 <- ordered(raw.short$ict_working_process_5, levels = c("Stimme gar nicht zu",
   "Stimme nicht zu",
   "Stimme eher nicht zu",
   "Stimme eher zu",
   "Stimme zu",
-  "Stimme völlig zu"))
+  "Stimme voellig zu"))
 
 raw.short$tui_1 <- ordered(raw.short$tui_1, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_2 <- ordered(raw.short$tui_2, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_3 <- ordered(raw.short$tui_3, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_4 <- ordered(raw.short$tui_4, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_5 <- ordered(raw.short$tui_5, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_6 <- ordered(raw.short$tui_6, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_7 <- ordered(raw.short$tui_7, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_8 <- ordered(raw.short$tui_8, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_9 <- ordered(raw.short$tui_9, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_10 <- ordered(raw.short$tui_10, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_11 <- ordered(raw.short$tui_11, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_12 <- ordered(raw.short$tui_12, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_13 <- ordered(raw.short$tui_13, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_14 <- ordered(raw.short$tui_14, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 raw.short$tui_15 <- ordered(raw.short$tui_15, levels = c("Stimme gar nicht zu",
                                                        "Stimme nicht zu",
                                                        "Stimme eher nicht zu",
                                                        "Stimme eher zu",
                                                        "Stimme zu",
-                                                       "Stimme völlig zu"))
+                                                       "Stimme voellig zu"))
 
 
 raw.short$ict_adoption <- as.factor(raw.short$ict_adoption)
@@ -254,52 +260,52 @@ raw.short$ict_adoption <- as.factor(raw.short$ict_adoption)
 raw.short$ict_rec_corp <- ordered(raw.short$ict_rec_corp, levels = c("Sehr selten",
                                                          "selten",
                                                          "eher selten",
-                                                         "eher häufig",
+                                                         "eher haeufig",
                                                          "häufig",
-                                                         "sehr häufig"))
+                                                         "sehr haeufig"))
 
 raw.short$ict_rec_boss <- ordered(raw.short$ict_rec_boss, levels = c("Sehr selten",
                                                                      "selten",
                                                                      "eher selten",
-                                                                     "eher häufig",
-                                                                     "häufig",
+                                                                     "eher haeufig",
+                                                                     "haeufig",
                                                                      "sehr häufig"))
 
 raw.short$ict_rec_cow <- ordered(raw.short$ict_rec_cow, levels = c("Sehr selten",
                                                                      "selten",
                                                                      "eher selten",
-                                                                     "eher häufig",
-                                                                     "häufig",
-                                                                     "sehr häufig"))
+                                                                     "eher haeufig",
+                                                                     "haeufig",
+                                                                     "sehr haeufig"))
 
 raw.short$ict_rec_friends <- ordered(raw.short$ict_rec_friends, levels = c("
                                                                       Sehr selten",
                                                                      "selten",
                                                                      "eher selten",
-                                                                     "eher häufig",
-                                                                     "häufig",
-                                                                     "sehr häufig"))
+                                                                     "eher haeufig",
+                                                                     "haeufig",
+                                                                     "sehr haeufig"))
 
 raw.short$ict_rec_fam <- ordered(raw.short$ict_rec_fam, levels = c("Sehr selten",
                                                                      "selten",
                                                                      "eher selten",
-                                                                     "eher häufig",
-                                                                     "häufig",
-                                                                     "sehr häufig"))
+                                                                     "eher haeufig",
+                                                                     "haeufig",
+                                                                     "sehr haeufig"))
 
 raw.short$ict_rec_acq <- ordered(raw.short$ict_rec_acq, levels = c("Sehr selten",
                                                                      "selten",
                                                                      "eher selten",
-                                                                     "eher häufig",
-                                                                     "häufig",
-                                                                     "sehr häufig"))
+                                                                     "eher haeufig",
+                                                                     "haeufig",
+                                                                     "sehr haeufig"))
 
 raw.short$ict_rec_alt <- ordered(raw.short$ict_rec_alt, levels = c("Sehr selten",
                                                                      "selten",
                                                                      "eher selten",
-                                                                     "eher häufig",
-                                                                     "häufig",
-                                                                     "sehr häufig"))
+                                                                     "eher haeufig",
+                                                                     "haeufig",
+                                                                     "sehr haeufig"))
 
 raw.short$ict_trust_corp <- ordered(raw.short$ict_trust_corp, levels = c("
                                                         Vollstes Misstrauen",
@@ -370,6 +376,7 @@ select(-starts_with("ict_working_process", ignore.case = F)) %>%
 select(-starts_with("tui", ignore.case = F))
 
 saveRDS(data, "data.rds")
+
 
 ```
 
